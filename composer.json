@@ -20,7 +20,7 @@
     "extra": {
         "think": {
             "services": [
-                "vadmin\\service\\VAdminAppService"
+                "vadmin\\service\\AppService"
             ]
         }
     },

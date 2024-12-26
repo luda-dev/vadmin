@@ -9,16 +9,22 @@ namespace vadmin\service;
 
 use think\Service;
 use vadmin\container\VConfig;
-
-class VAdminAppService extends Service
+use vadmin\container\Casbin;
+class AppService extends Service
 {
 
     public $bind = [
         'vconfig' => VConfig::class,
+        // casbin 容器
+        'casbin' => Casbin::class,
     ];
 
     public function boot()
     {
+
+        // 大量的前置操作
+
+
         // 加载App配置信息
         $this->app->vconfig->loadAppConfig();
     }
