@@ -1,0 +1,29 @@
+{
+    "name": "luda-dev/vadmin",
+    "description": "vadmin framework",
+    "license": "Apache-2.0",
+    "type": "library",
+    "authors": [
+        {
+            "name": "luda",
+            "email": "admin@nbui.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "vadmin\\": "src"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "vadmin\\service\\VAdminAppService"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
