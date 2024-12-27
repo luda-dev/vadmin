@@ -23,7 +23,7 @@ class AppService extends Service
     {
 
         // 大量的前置操作
-
+        // dump();
 
         // 加载App配置信息
         $this->app->vconfig->loadAppConfig();

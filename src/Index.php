@@ -1,11 +1,12 @@
 <?php
 
+
 namespace vadmin;
 
 class Index
 {
     public function index()
     {
-        return 'Hello World';
+        return 'Hello World123';
     }
 }
