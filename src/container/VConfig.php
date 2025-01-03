@@ -11,7 +11,6 @@ use think\App;
 
 class VConfig
 {
-
     protected $config = [];
 
     protected $app;
@@ -51,7 +50,7 @@ class VConfig
         return $config;
     }
 
-    public function __construct(App $app, $path)
+    public function __construct(App $app , $path)
     {
         $this->app = $app;
         $this->path = $path;
@@ -60,10 +59,8 @@ class VConfig
     public static function __make(App $app)
     {
         $path = $app->getBasePath();
-
         return new static($app, $path);
     }
-
 
     public function loadAppConfig()
     {

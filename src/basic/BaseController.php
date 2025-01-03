@@ -38,6 +38,12 @@ abstract class BaseController
     protected $middleware = [];
 
     /**
+     * 控制器路径
+     * @var string
+     */
+    protected $controllerPath;
+
+    /**
      * 构造方法
      * @access public
      * @param  App  $app  应用对象
@@ -46,12 +52,17 @@ abstract class BaseController
     {
         $this->app = $app;
         $this->request = $app->request;
+        $this->controllerPath = str_replace('.',DIRECTORY_SEPARATOR, $this->request->controller(true));
         // 控制器初始化
         $this->initialize();
     }
 
     // 初始化
-    protected function initialize() {}
+    protected function initialize() {
+        $langset = $this->app->lang->defaultLangSet();
+        $path = $this->app->getAppPath() . 'lang' . DIRECTORY_SEPARATOR . $langset .DIRECTORY_SEPARATOR.(str_replace('/', DIRECTORY_SEPARATOR, $this->controllerPath))  .'.php';
+        $this->app->lang->load($path);
+    }
 
     /**
      * 验证数据
