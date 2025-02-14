@@ -11,8 +11,13 @@ use think\App;
 use think\exception\ValidateException;
 use think\Validate;
 
-abstract class BaseController
+
+abstract class BaseApi
 {
+    // 数据返回
+    use \vadmin\traits\Result;
+
+    protected string $responseType = 'json';
     /**
      * Request实例
      * @var \think\Request

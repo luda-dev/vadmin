@@ -1,4 +1,5 @@
 <?php
+
 // +----------------------------------------------------------------------
 // | VADMIN APP应用服务类
 // +----------------------------------------------------------------------
@@ -22,6 +23,6 @@ class AppService extends Service
     public function boot()
     {
         // 加载App配置信息
-        app(VConfig::class)->loadAppConfig();
+        // app(VConfig::class)->loadAppConfig();
     }
 }
